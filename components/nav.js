@@ -2,28 +2,15 @@ import Link from 'next/link'
 
 const Nav = ({ categories }) => {
 	return (
-		<div>
-			<nav className='uk-navbar-container' data-uk-navbar>
-				<div className='uk-navbar-left'>
-					<ul className='uk-navbar-nav'>
+		<div className='fixed text-white mix-blend-difference z-50 top-0 left-0 right-0 py-3'>
+			<nav className='container'>
+				<div className=''>
+					<ul className=''>
 						<li>
 							<Link href='/'>
-								<a>Strapi Blog</a>
+								<a className='font-light'>Giuseppe Versari</a>
 							</Link>
 						</li>
-					</ul>
-				</div>
-				<div className='uk-navbar-right'>
-					<ul className='uk-navbar-nav'>
-						{categories.map((category) => {
-							return (
-								<li key={category.id}>
-									<Link href={`/category/${category.attributes.slug}`}>
-										<a className='uk-link-reset'>{category.attributes.name}</a>
-									</Link>
-								</li>
-							)
-						})}
 					</ul>
 				</div>
 			</nav>

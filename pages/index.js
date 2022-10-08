@@ -1,5 +1,7 @@
 import React from 'react'
 import Articles from '../components/articles'
+import Content from '../components/content'
+import Hero from '../components/hero'
 import Image from '../components/image'
 import ImageSection from '../components/imageSection'
 import Layout from '../components/layout'
@@ -7,22 +9,22 @@ import Seo from '../components/seo'
 import { fetchAPI } from '../lib/api'
 
 const Home = ({ articles, categories, homepage }) => {
-	const { hero, seo, image } = homepage.attributes
+	const { hero, seo, content } = homepage.attributes
+
+	console.log(content)
+
 	return (
 		<Layout categories={categories}>
 			<Seo seo={seo} />
-			<div className='uk-section'>
-				<div className='uk-container uk-container-large'>
-					<h1>{hero.title}</h1>
-					<Image image={hero.cover} />
-					{/* <Articles articles={articles} /> */}
-
-					<ImageSection
-						image={image[0].image}
-						dimension={image[0].dimension}
-						align={image[0].align}
-					/>
-				</div>
+			<div className=''>
+				<Hero hero={hero} />
+				{/* <ImageSection
+					className={'w-3/5'}
+					image={image[0].image}
+					dimension={image[0].dimension}
+					align={image[0].align}
+				/> */}
+				<Content content={content} />
 			</div>
 		</Layout>
 	)
@@ -36,8 +38,8 @@ export async function getStaticProps() {
 		fetchAPI('/homepage', {
 			populate: {
 				hero: { populate: '*' },
-				Gallery: { populate: '*' },
-				image: { populate: '*' },
+				// Gallery: { populate: '*' },
+				content: { populate: '*' },
 				seo: { populate: '*' },
 			},
 		}),

@@ -1,15 +1,16 @@
 import { getStrapiMedia } from '../lib/media'
 import NextImage from 'next/image'
 
-const Image = ({ image }) => {
+const Image = ({ image, layout = 'responsive', ref = null }) => {
 	const { alternativeText, width, height } = image.data.attributes
 
 	return (
 		<NextImage
-			layout='responsive'
+			layout={layout}
+			ref={ref}
 			width={width}
 			height={height}
-			objectFit='contain'
+			objectFit='cover'
 			src={getStrapiMedia(image)}
 			alt={alternativeText || ''}
 		/>

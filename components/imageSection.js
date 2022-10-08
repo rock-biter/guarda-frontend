@@ -1,8 +1,8 @@
 import Image from './image'
 
-const ImageSection = ({ image, dimension, align = 'left' }) => {
+const ImageSection = ({ image, dimension, align = 'left', className }) => {
 	return (
-		<section>
+		<section className={className}>
 			<Image image={image}></Image>
 		</section>
 	)
