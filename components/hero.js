@@ -1,13 +1,14 @@
 import Image from './image'
 import { gsap } from 'gsap'
-import { SplitText } from 'gsap/dist/SplitText'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { SplitText } from 'gsap/SplitText'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef } from 'react'
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
 const Hero = ({ hero }) => {
 	const titleRef = useRef()
 	const imageRef = useRef()
+	const heroRef = useRef()
 
 	useEffect(() => {
 		const title = titleRef.current
@@ -33,28 +34,21 @@ const Hero = ({ hero }) => {
 
 		const image = imageRef.current
 		if (image) {
+			if (scrollTrigger) scrollTrigger.kill()
 			scrollTrigger = ScrollTrigger.create({
-				trigger: '#hero',
+				trigger: heroRef.current,
 				scrub: 1,
+				// pin: true,
 				start: 'top top',
-				end: '+=1000',
+				// markers: true,
+				end: '+=500px',
 				onUpdate(self) {
 					gsap.to(image, {
 						duration: 0.5,
 						width: 300 + self.progress * (window.innerWidth - 300),
 					})
-
-					// gsap.to(splittedTitle.chars, {
-					// 	duration: 0.2,
-					// 	y: (i, el) => {
-					// 		gsap.to(el, {
-					// 			duration: 0.5,
-					// 			y: i * 2 * self.progress * -30,
-					// 		})
-					// 	},
-					// })
-					// image.style.width = 200 + self.progress * (window.innerWidth - 200)
 				},
+				// width: window.innerWidth,
 			})
 
 			gsap.to(image, {
@@ -67,22 +61,24 @@ const Hero = ({ hero }) => {
 	}, [])
 
 	return (
-		<section id='hero' className='overflow-hidden  py-40'>
-			<div>
-				<h1 ref={titleRef} className='text-5xl text-center font-thin'>
-					{hero.title}
-				</h1>
-			</div>
-			<div>
-				<div
-					ref={imageRef}
-					style={{ clipPath: 'inset(100% 0% 0% 0%)' }}
-					className='relative mx-auto mt-12 h-[100vh] w-[300px]'
-				>
-					<Image layout='fill' image={hero.cover} />
+		<div ref={heroRef}>
+			<section className='overflow-hidden mb-20 lg:mb-40 xl:mb-80 pt-80'>
+				<div>
+					<h1 ref={titleRef} className='text-5xl text-center font-thin'>
+						{hero.title}
+					</h1>
 				</div>
-			</div>
-		</section>
+				<div>
+					<div
+						ref={imageRef}
+						style={{ clipPath: 'inset(100% 0% 0% 0%)' }}
+						className='relative mx-auto mt-12 h-[60vh] lg:h-[100vh] w-[300px]'
+					>
+						<Image layout='fill' image={hero.cover} />
+					</div>
+				</div>
+			</section>
+		</div>
 	)
 }
 

@@ -482,6 +482,11 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
+classnames@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
+
 color-convert@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz"
@@ -633,6 +638,14 @@ emoji-regex@^9.2.2:
   version "9.2.2"
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
+
+enhanced-resolve@^5.7.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.10.0.tgz#0dc579c3bb2a1032e357ac45b8f3a6f3ad4fb1e6"
+  integrity sha512-T0yTFjdpldGY8PmuXXR0PyQ1ufZpEGiHVrp7zHKB7jdR4qlmZHhONVM5AQOAWXuF/w3dnHbEQVrNptJgt7F+cQ==
+  dependencies:
+    graceful-fs "^4.2.4"
+    tapable "^2.2.0"
 
 es-abstract@^1.19.0, es-abstract@^1.19.1, es-abstract@^1.19.2, es-abstract@^1.19.5:
   version "1.20.3"
@@ -1079,6 +1092,11 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+graceful-fs@^4.2.4:
+  version "4.2.10"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.10.tgz#147d3a006da4ca3ce14728c7aefc287c367d7a6c"
+  integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
+
 grapheme-splitter@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
@@ -1087,11 +1105,6 @@ grapheme-splitter@^1.0.4:
 gsap@./gsap-bonus.tgz:
   version "3.11.3"
   resolved "./gsap-bonus.tgz#0a10e71686f39ae3b76d259a85305454b65933f2"
-
-gsap@^3.11.3:
-  version "3.11.3"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.3.tgz#ca5be827f56fe8d5720e08343390f74fb89a05f3"
-  integrity sha512-xc/iIJy+LWiMbRa4IdMtdnnKa/7PXEK6NNzV71gdOYUVeTZN7UWnLU0fB7Hi1iwiz4ZZoYkBZPPYGg+2+zzFHA==
 
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
@@ -1695,6 +1708,14 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+next-transpile-modules@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-9.0.0.tgz#133b1742af082e61cc76b02a0f12ffd40ce2bf90"
+  integrity sha512-VCNFOazIAnXn1hvgYYSTYMnoWgKgwlYh4lm1pKbSfiB3kj5ZYLcKVhfh3jkPOg1cnd9DP+pte9yCUocdPEUBTQ==
+  dependencies:
+    enhanced-resolve "^5.7.0"
+    escalade "^3.1.1"
+
 next@12.3.1:
   version "12.3.1"
   resolved "https://registry.npmjs.org/next/-/next-12.3.1.tgz"
@@ -2295,6 +2316,11 @@ tailwindcss@^3.1.8:
     postcss-value-parser "^4.2.0"
     quick-lru "^5.1.1"
     resolve "^1.22.1"
+
+tapable@^2.2.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.2.1.tgz#1967a73ef4060a82f12ab96af86d52fdb76eeca0"
+  integrity sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==
 
 text-table@^0.2.0:
   version "0.2.0"
