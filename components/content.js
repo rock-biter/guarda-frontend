@@ -1,16 +1,18 @@
+import Gallery from './gallery'
 import ImageSection from './imageSection'
 
 const Content = ({ content }) => {
 	return (
 		<>
 			{content &&
-				content.map((el) => {
+				content.map((el, i) => {
 					const { __component } = el
 
 					switch (__component) {
 						case 'sections.image':
-							return <ImageSection key={el.id} {...el} />
-						// case 'sections.gallery':
+							return <ImageSection key={i} {...el} />
+						case 'sections.gallery':
+							return <Gallery key={i} {...el} />
 					}
 				})}
 		</>

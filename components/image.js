@@ -2,7 +2,8 @@ import { getStrapiMedia } from '../lib/media'
 import NextImage from 'next/image'
 
 const Image = ({ image, layout = 'responsive', ref = null }) => {
-	const { alternativeText, width, height } = image.data.attributes
+	const { alternativeText, width, height } =
+		image.data?.attributes || image.attributes
 
 	return (
 		<NextImage

@@ -15,7 +15,7 @@ const ImageSection = ({ image, dimension, align = 'left', className }) => {
 		// })
 		ScrollTrigger.create({
 			trigger: sectionRef.current,
-			start: 'top bottom',
+			start: 'top 80%',
 			end: '+=500px',
 			scrub: 1,
 			onUpdate(self) {
@@ -54,7 +54,14 @@ const ImageSection = ({ image, dimension, align = 'left', className }) => {
 					'w-2/3 lg:w-1/3': dimension === 'small',
 					'w-full': dimension === 'full',
 				})}
-				style={{ clipPath: 'inset(100% 100% 0% 0%)' }}
+				style={{
+					clipPath:
+						align === 'left'
+							? 'inset(100% 100% 0% 0%)'
+							: align === 'right'
+							? 'inset(100% 0% 0% 100%)'
+							: 'inset(100% 0% 0% 0%)',
+				}}
 			>
 				<Image image={image}></Image>
 			</div>
