@@ -30,27 +30,9 @@ const Article = ({ article, categories }) => {
 			</div>
 			<div className='uk-section'>
 				<div className='uk-container uk-container-small'>
-					<ReactMarkdown children={article.attributes.content} />
+					{/* <ReactMarkdown children={article.attributes.content} /> */}
 					<hr className='uk-divider-small' />
 					<div className='uk-grid-small uk-flex-left' data-uk-grid='true'>
-						<div>
-							{article.attributes.author.data.attributes.picture && (
-								<img
-									src={getStrapiMedia(
-										article.attributes.author.data.attributes.picture
-									)}
-									alt={
-										article.attributes.author.data.attributes.picture.data
-											.attributes.alternativeText
-									}
-									style={{
-										position: 'static',
-										borderRadius: '20%',
-										height: 60,
-									}}
-								/>
-							)}
-						</div>
 						<div className='uk-width-expand'>
 							<p className='uk-margin-remove-bottom'>
 								By {article.attributes.author.data.attributes.name}

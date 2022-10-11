@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const BackgroundChange = ({ color }) => {
 	const bgRef = useRef()
-	let st
+	// let st
 
 	const colors = {
 		prev: null,
@@ -16,9 +16,9 @@ const BackgroundChange = ({ color }) => {
 
 		if (!bg) return
 
-		if (st) st.kill()
+		// if (st) st.kill()
 
-		st = ScrollTrigger.create({
+		ScrollTrigger.create({
 			trigger: bg,
 			start: 'top center',
 			end: '+=10px',
@@ -35,7 +35,7 @@ const BackgroundChange = ({ color }) => {
 		})
 
 		return () => {
-			st.kill()
+			// st.kill()
 		}
 	}, [])
 

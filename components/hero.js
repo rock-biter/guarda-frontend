@@ -27,7 +27,7 @@ const Hero = ({ hero }) => {
 					y: 0,
 					opacity: 1,
 					stagger: 0.08,
-					delay: 1.2,
+					delay: 0.3,
 					ease: 'power4.out',
 					onStart() {
 						gsap.set(title, { opacity: 1 })
@@ -56,7 +56,7 @@ const Hero = ({ hero }) => {
 			})
 
 			gsap.to(image, {
-				duration: 2,
+				duration: 1.5,
 				clipPath: 'inset(0% 0% 0% 0%)',
 				ease: 'power3.out',
 				onComplete() {},

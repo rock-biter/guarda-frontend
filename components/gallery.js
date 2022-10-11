@@ -6,14 +6,14 @@ gsap.registerPlugin(ScrollTrigger)
 const Gallery = ({ className, images, direction = 'right', color }) => {
 	const galleryRef = useRef()
 	const imagesRef = useRef()
-	let wrapperScroll, imagesScroll
+	// let wrapperScroll, imagesScroll
 	const dir = direction === 'left' ? -1 : 1
 
 	useEffect(() => {
 		if (!galleryRef.current) return
 
-		if (wrapperScroll) wrapperScroll.kill()
-		if (imagesScroll) imagesScroll.kill()
+		// if (wrapperScroll) wrapperScroll.kill()
+		// if (imagesScroll) imagesScroll.kill()
 
 		// console.log('create scroll trigger', st)
 		gsap.set(imagesRef.current, {
@@ -28,7 +28,7 @@ const Gallery = ({ className, images, direction = 'right', color }) => {
 		// 	scrub: true,
 		// })
 
-		imagesScroll = ScrollTrigger.create({
+		ScrollTrigger.create({
 			trigger: galleryRef.current,
 			start: 'top bottom',
 			end: 'bottom top',

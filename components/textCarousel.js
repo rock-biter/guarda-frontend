@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 const TextCarousel = ({ className, text, direction = 'left' }) => {
 	const elements = new Array(10).fill(text)
 	const textRef = useRef()
-	let st
+	// let st
 	const dir = direction === 'left' ? -1 : 1
 
 	useEffect(() => {
@@ -15,9 +15,9 @@ const TextCarousel = ({ className, text, direction = 'left' }) => {
 
 		if (!text) return
 
-		if (st) st.kill()
+		// if (st) st.kill()
 
-		st = ScrollTrigger.create({
+		ScrollTrigger.create({
 			trigger: text,
 			start: 'top bottom',
 			end: 'bottom top',

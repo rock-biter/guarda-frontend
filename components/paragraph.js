@@ -16,7 +16,7 @@ const Paragraph = ({ paragraph, side = 'left' }) => {
 			const splittedPara = new SplitText(para, { type: 'words,lines' })
 			gsap.set(splittedPara.words, { autoAlpha: 0 })
 
-			const st = ScrollTrigger.batch(splittedPara.words, {
+			ScrollTrigger.batch(splittedPara.words, {
 				start: 'top 90%',
 				onEnter(elements, triggers) {
 					gsap.fromTo(
