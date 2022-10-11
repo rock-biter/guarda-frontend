@@ -9,6 +9,14 @@ module.exports = {
 			container: {
 				center: true,
 			},
+			fontFamily: {
+				// sans: 'Oranienbaum, serif',
+				// sans: "'Limelight', cursive",
+				// sans: "'Croissant One', cursive",
+				sans: "'Antic Didone', serif",
+				// serif: "'Petit Formal Script', cursive",
+				serif: "'Italiana', serif",
+			},
 		},
 	},
 	plugins: [],

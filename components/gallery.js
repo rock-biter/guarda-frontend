@@ -33,21 +33,21 @@ const Gallery = ({ className, images, direction = 'right', color }) => {
 			start: 'top bottom',
 			end: 'bottom top',
 			scrub: true,
-			onEnter() {
-				gsap.to(document.body, { duration: 0.5, background: color })
-			},
-			onEnterBack() {
-				gsap.to(document.body, { duration: 0.5, background: color })
-			},
-			onLeave() {
-				gsap.to(document.body, { duration: 0.5, background: 'white' })
-			},
-			onLeaveBack() {
-				gsap.to(document.body, { duration: 0.5, background: 'white' })
-			},
+			// onEnter() {
+			// 	gsap.to(document.body, { duration: 0.5, background: color })
+			// },
+			// onEnterBack() {
+			// 	gsap.to(document.body, { duration: 0.5, background: color })
+			// },
+			// onLeave() {
+			// 	gsap.to(document.body, { duration: 0.5, background: 'white' })
+			// },
+			// onLeaveBack() {
+			// 	gsap.to(document.body, { duration: 0.5, background: 'white' })
+			// },
 			onUpdate(self) {
 				const progress = (self.progress - 0.5) * 2 * dir
-				console.log(progress)
+				// console.log(progress)
 				gsap.to(imagesRef.current, {
 					duration: 1,
 					xPercent: progress * 110,
@@ -62,7 +62,7 @@ const Gallery = ({ className, images, direction = 'right', color }) => {
 			<div className='container'>
 				<div
 					ref={imagesRef}
-					className='flex w-max gap-20 items-center py-0 lg:py-20'
+					className='flex w-max gap-20 items-center py-8 lg:py-28'
 				>
 					{images.data.map((image, i) => {
 						return (

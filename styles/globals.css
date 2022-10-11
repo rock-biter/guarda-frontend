@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,4 +15,12 @@
 @layer components {
 }
 @layer utilities {
+}
+
+body {
+	background-color: white;
+}
+
+.paragraph > div {
+	overflow: hidden;
 }

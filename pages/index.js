@@ -1,17 +1,17 @@
 import React from 'react'
-import Articles from '../components/articles'
 import Content from '../components/content'
 import Hero from '../components/hero'
-import Image from '../components/image'
-import ImageSection from '../components/imageSection'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { fetchAPI } from '../lib/api'
+import useSite from '../hooks/use-site'
 
 const Home = ({ articles, categories, homepage }) => {
 	const { hero, seo, content } = homepage.attributes
 
-	console.log(content)
+	// console.log('global context:', GlobalContext)
+	const site = useSite()
+	console.log('site', site)
 
 	return (
 		<Layout categories={categories}>

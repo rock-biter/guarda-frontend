@@ -39,7 +39,7 @@ const ImageSection = ({ image, dimension, align = 'left', className }) => {
 	return (
 		<section
 			ref={sectionRef}
-			className={classNames(className, 'flex my-12 lg:my-40 xl:my-80', {
+			className={classNames(className, 'flex my-12 lg:my-40 xl:my-60', {
 				container: dimension === 'small' || dimension === 'medium',
 				'justify-start': align === 'left',
 				'justify-end': align === 'right',

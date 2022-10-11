@@ -1,15 +1,23 @@
 import App from 'next/app'
 import Head from 'next/head'
 import '../styles/globals.css'
-import { createContext } from 'react'
+import { useState } from 'react'
 import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 
 // Store Strapi Global object in context
-export const GlobalContext = createContext({})
+// export const GlobalContext = createContext({})
+
+import { SiteContext, useSiteContext } from '../hooks/use-site'
 
 const MyApp = ({ Component, pageProps }) => {
 	const { global } = pageProps
+
+	const siteInit = useSiteContext({
+		...global.attributes,
+	})
+
+	const [site, setSite] = useState(siteInit)
 
 	return (
 		<>
@@ -19,9 +27,9 @@ const MyApp = ({ Component, pageProps }) => {
 					href={getStrapiMedia(global.attributes.favicon)}
 				/>
 			</Head>
-			<GlobalContext.Provider value={global.attributes}>
+			<SiteContext.Provider value={{ site, setSite }}>
 				<Component {...pageProps} />
-			</GlobalContext.Provider>
+			</SiteContext.Provider>
 		</>
 	)
 }
@@ -40,6 +48,10 @@ MyApp.getInitialProps = async (ctx) => {
 			defaultSeo: {
 				populate: '*',
 			},
+			email: '*',
+			address: '*',
+			city: '*',
+			payoff: '*',
 		},
 	})
 	// Pass the data to our page via props

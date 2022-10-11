@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react'
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
 const Hero = ({ hero }) => {
+	const { title, subtitle, cover } = hero
 	const titleRef = useRef()
 	const imageRef = useRef()
 	const heroRef = useRef()
@@ -28,6 +29,9 @@ const Hero = ({ hero }) => {
 					stagger: 0.08,
 					delay: 1.2,
 					ease: 'power4.out',
+					onStart() {
+						gsap.set(title, { opacity: 1 })
+					},
 				}
 			)
 		}
@@ -45,7 +49,7 @@ const Hero = ({ hero }) => {
 				onUpdate(self) {
 					gsap.to(image, {
 						duration: 0.5,
-						width: 300 + self.progress * (window.innerWidth - 300),
+						width: 300 + self.progress * (heroRef.current.clientWidth - 300),
 					})
 				},
 				// width: window.innerWidth,
@@ -62,11 +66,19 @@ const Hero = ({ hero }) => {
 
 	return (
 		<div ref={heroRef}>
-			<section className='overflow-hidden mb-20 lg:mb-40 xl:mb-80 pt-80'>
+			<section className='overflow-hidden mb-20 lg:mb-40 xl:mb-80 pt-[30vh]'>
 				<div>
-					<h1 ref={titleRef} className='text-5xl text-center font-thin'>
-						{hero.title}
+					<h1
+						ref={titleRef}
+						style={{ opacity: 0 }}
+						className='text-5xl lg:text-8xl text-center  font-serif'
+					>
+						{title}
+						<br />
+
+						<p className='font-sans text-xl text-center mt-4'>{subtitle}</p>
 					</h1>
+					{/* <h1 className='text-5xl text-center font-sans'>{hero.title}</h1> */}
 				</div>
 				<div>
 					<div
@@ -74,7 +86,7 @@ const Hero = ({ hero }) => {
 						style={{ clipPath: 'inset(100% 0% 0% 0%)' }}
 						className='relative mx-auto mt-12 h-[60vh] lg:h-[100vh] w-[300px]'
 					>
-						<Image layout='fill' image={hero.cover} />
+						<Image layout='fill' image={cover} />
 					</div>
 				</div>
 			</section>
