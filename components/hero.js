@@ -19,8 +19,6 @@ const Hero = ({ hero }) => {
 			splittedTitle = new SplitText(title, { type: 'chars' })
 			gsap.set(splittedTitle.chars, { opacity: 0 })
 
-			console.log('ciao')
-
 			gsap.fromTo(
 				splittedTitle.chars,
 				{ y: -20, opacity: 0 },
